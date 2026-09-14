@@ -1,61 +1,74 @@
-Visualization of Wireless Path-Loss Model
+# Visualization of Wireless Path-Loss Model
 
-Overview
+## Overview
 
-This deliverable contains a clean and self-contained implementation of Problem 4: Visualization from the laboratory assignment.
+This solution provides a clean and self-contained implementation of **Visualization** from the laboratory assignment.
 
-The objective is to visualize measured path-loss data and compare it against the fitted linear regression model derived from the Close-In (CI) path-loss formulation.
+The objective is to visualize the measured wireless path-loss data and compare it with the fitted linear regression model derived from the **Close-In (CI) path-loss model**.
 
-Scope
+---
 
-Only the components required for Problem 4 have been retained:
+## Objective
 
-Data loading (or synthetic data generation when the dataset is unavailable)
+The main objective is to:
 
-Feature preparation
+- Load wireless path-loss measurement data.
+- Prepare the regression feature.
+- Fit a linear regression model.
+- Estimate the path-loss relationship.
+- Visualize the measured data and fitted path-loss curve.
 
-Linear regression model implementation
+---
 
-Model fitting
+## Model
 
-Visualization of measured and predicted path-loss values
+The Close-In (CI) path-loss model is given by:
 
-The following items were intentionally removed because they are not required for Problem 4:
+$$
+PL(d) = FSPL(d_0) + 10n\log_{10}\left(\frac{d}{d_0}\right) + \varepsilon
+$$
 
-Learning-rate experiments
+where:
 
-Gradient Descent implementation
+- $PL(d)$ — measured path loss in dB
+- $FSPL(d_0)$ — free-space path loss at reference distance $d_0$
+- $n$ — path-loss exponent
+- $d$ — transmitter-receiver separation distance
+- $d_0$ — reference distance
+- $\varepsilon$ — shadowing/random error
 
-Stochastic Gradient Descent implementation
+The model is rearranged into a linear regression form:
 
-Loss-history analysis
+$$
+y = \theta_0 + \theta_1x + \varepsilon
+$$
 
-Shadowing variance estimation (Problem 3)
+where:
 
-Notebook-specific outputs and exploratory code
+$$
+x = \log_{10}\left(\frac{d}{d_0}\right)
+$$
 
-Input Data
+and:
 
-The script searches for:
+$$
+\theta_0 = FSPL(d_0), \qquad \theta_1 = 10n
+$$
 
-pathloss.txt
+---
 
-Required Packages
+## Scope
 
-pip install numpy matplotlib
+Only the components required for **Visualization** are included:
 
-Execution
+1. Data loading
+2. Synthetic data generation when the dataset is unavailable
+3. Feature preparation
+4. Linear regression model implementation
+5. Model fitting
+6. Visualization of measured and predicted path-loss values
 
-Run the program using:
 
-python Question-4-Clean.py
 
-Output
+---
 
-The program generates a visualization containing:
-
-Measured path-loss samples
-
-Regression-based fitted path-loss curve
-
-This plot provides a visual assessment of how effectively the regression model captures the propagation trend present in the dataset.
