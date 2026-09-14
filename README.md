@@ -4,15 +4,7 @@
 
 This repository contains the solutions for Lab 1 of ECM402.
 
-## Questions
 
-| Question   | Topic                       | Solution              |
-| ---------- | --------------------------- | --------------------- |
-| Question 1 | MyLinearRegression          | [Open](./Question-1/) |
-| Question 2 | FSPL and Path-Loss Exponent | [Open](./Question-2/) |
-| Question 3 | Question 3                  | [Open](./Question-3/) |
-| Question 4 | Question 4                  | [Open](./Question-4/) |
-| Question 5 | Question 5                  | [Open](./Question-5/) |
 
 ## Repository Structure
 
